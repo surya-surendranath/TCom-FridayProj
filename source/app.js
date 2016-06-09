@@ -12,10 +12,10 @@ var PRODUCTS = [
 ]
 
 const renderStuff = document.getElementById('homebody')
+console.log('welcome to TCom')
 
 ReactDOM.render(
 	<App name='TCom' products={PRODUCTS} />,
 	renderStuff
 )
 
-console.log('welcome to TCom')
