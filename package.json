@@ -1,19 +1,42 @@
 {
-  "name": "tcom",
+  "name": "TCom",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tshirt Ecomm Site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "budo . -d --serve bundle.js --live",
+    "build": "browserify . -o bundle.js -g uglifyify",
+    "test": "browserify test.js | node | tap-spec",
+    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
+    "push": "gh-pages -d dist",
+    "deploy": "npm run build && npm run dist && npm run push"
+  },
+  "browserify": {
+    "transform": ["babelify"]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/surya-surendranath/TCom-FridayProj.git"
+    "url": "https://github.com/pearlr/TCom"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "pearlr",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/surya-surendranath/TCom-FridayProj/issues"
+    "url": "https://github.com/pearlr/TCom/issues"
   },
-  "homepage": "https://github.com/surya-surendranath/TCom-FridayProj#readme"
+  "homepage": "https://github.com/pearlr/TCom",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "budo": "^8.2.0",
+    "gh-pages": "^0.11.0",
+    "react": "^15.0.1", 
+    "react-dom": "^15.0.1", 
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.7.0"
+  }
 }
