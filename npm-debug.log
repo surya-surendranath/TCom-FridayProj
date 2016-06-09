@@ -3,11 +3,11 @@
 2 info using npm@2.14.12
 3 info using node@v4.3.0
 4 verbose run-script [ 'pretest', 'test', 'posttest' ]
-5 info pretest tcom@1.0.0
-6 info test tcom@1.0.0
+5 info pretest TCom@1.0.0
+6 info test TCom@1.0.0
 7 verbose unsafe-perm in lifecycle true
-8 info tcom@1.0.0 Failed to exec test script
-9 verbose stack Error: tcom@1.0.0 test: `clear & mocha test/.setup.js test/**/*.js`
+8 info TCom@1.0.0 Failed to exec test script
+9 verbose stack Error: TCom@1.0.0 test: `clear & mocha test/.setup.js test/**/*.js`
 9 verbose stack Exit status 1
 9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
 9 verbose stack     at emitTwo (events.js:87:13)
@@ -17,21 +17,21 @@
 9 verbose stack     at ChildProcess.emit (events.js:172:7)
 9 verbose stack     at maybeClose (internal/child_process.js:821:16)
 9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
-10 verbose pkgid tcom@1.0.0
+10 verbose pkgid TCom@1.0.0
 11 verbose cwd /Users/Olly/workspace/EDA/sprint-16/TCom-FridayProj
 12 error Darwin 15.4.0
 13 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "test"
 14 error node v4.3.0
 15 error npm  v2.14.12
 16 error code ELIFECYCLE
-17 error tcom@1.0.0 test: `clear & mocha test/.setup.js test/**/*.js`
+17 error TCom@1.0.0 test: `clear & mocha test/.setup.js test/**/*.js`
 17 error Exit status 1
-18 error Failed at the tcom@1.0.0 test script 'clear & mocha test/.setup.js test/**/*.js'.
-18 error This is most likely a problem with the tcom package,
+18 error Failed at the TCom@1.0.0 test script 'clear & mocha test/.setup.js test/**/*.js'.
+18 error This is most likely a problem with the TCom package,
 18 error not with npm itself.
 18 error Tell the author that this fails on your system:
 18 error     clear & mocha test/.setup.js test/**/*.js
 18 error You can get their info via:
-18 error     npm owner ls tcom
+18 error     npm owner ls TCom
 18 error There is likely additional logging output above.
 19 verbose exit [ 1, true ]

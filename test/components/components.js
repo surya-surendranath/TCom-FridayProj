@@ -4,8 +4,8 @@ import { expect } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 
 import App from '../../components/app'
-import Products from '../../Homepage-product'
-import Product from '../../components/Indiv-product'
+import Products from '../../components/home-products-index'
+import Product from '../../components/individualProduct'
 
 const {
   isCompositeComponent,
