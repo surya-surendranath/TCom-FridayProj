@@ -11,8 +11,6 @@ var knex        		= require('knex')(knexOptions)
 var KnexSessionStore = require('connect-session-knex')(session)
 var store       		= new KnexSessionStore({ knex: knex })
 
-app.set('port', (process.env.PORT || 3000));
-
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
