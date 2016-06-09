@@ -7,7 +7,12 @@ class App extends Component {
   }
 
   render () {
-    return <h1>Welcome to {this.props.name}</h1>
+    return (
+    	<div>
+    		<h1>Welcome to {this.props.name}</h1>
+    		<HomeProductsIndex />
+		</div>
+    )	
   }
 
 }

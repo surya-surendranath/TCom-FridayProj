@@ -4,12 +4,9 @@
   "description": "Tshirt Ecomm Site",
   "main": "index.js",
   "scripts": {
-    "start": "budo . -d --serve bundle.js --live",
+    "start" : "nodemon index.js" ,
+    "start-dev": "budo . -d --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
-    "test": "browserify test.js | node | tap-spec",
-    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
-    "push": "gh-pages -d dist",
-    "deploy": "npm run build && npm run dist && npm run push"
   },
   "browserify": {
     "transform": ["babelify"]
@@ -24,7 +21,6 @@
     "url": "https://github.com/pearlr/TCom/issues"
   },
   "homepage": "https://github.com/pearlr/TCom",
-  "dependencies": {},
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
@@ -37,6 +33,10 @@
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1",
     "uglifyify": "^3.0.1",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+  "homepage": "https://github.com/surya-surendranath/TCom-FridayProj#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "nodemon": "^1.9.2"
   }
 }
