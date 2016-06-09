@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "start-dev": "budo ./source/*.* -d --serve bundle.js --live",
-    "build": "browserify . -o bundle.js -g uglifyify"
+    "start-dev": "budo ./source/*.* -d --serve ./public/home.html --live",
+    "build": "browserify . -o ./public/bundle.js -g uglifyify"
   },
   "browserify": {
     "transform": [
