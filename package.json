@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "clear & mocha test/.setup.js test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,18 @@
     "url": "https://github.com/surya-surendranath/TCom-FridayProj/issues"
   },
   "homepage": "https://github.com/surya-surendranath/TCom-FridayProj#readme",
+   "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "dependencies": {
     "body-parser": "^1.15.1",
     "connect-session-knex": "^1.0.23",
@@ -28,5 +40,14 @@
     "passport": "^0.3.2",
     "passport-twitter": "^1.0.4",
     "sqlite3": "^3.1.4"
+  },
+  "devDependencies": {
+    "babel-register": "^6.9.0",
+
+    "chai": "^3.5.0",
+    "enzyme": "^2.3.0",
+    "jsdom": "^9.2.1",
+    "mocha": "^2.5.3",
+    "react-addons-test-utils": "^15.1.0"
   }
 }
