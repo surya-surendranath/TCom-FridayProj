@@ -4,7 +4,6 @@ var App = require('./source/app.js')
 var path 						= require('path')
 var express 				= require('express')
 var session     		= require('express-session')
-var bodyParser 			= require('body-parser'); 
 var app 						= express()
 var passport 				= require('passport')
 var TwitterStrategy = require('passport-twitter')
@@ -12,6 +11,8 @@ var knexOptions 		= require('./knexfile')[process.env.NODE_ENV]
 var knex        		= require('knex')(knexOptions)
 var KnexSessionStore = require('connect-session-knex')(session)
 var store       		= new KnexSessionStore({ knex: knex })
+
+app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(require('cookie-parser')());
@@ -30,12 +31,14 @@ app.use(session({
 
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  console.log('Friday', req.session.passport.user)
+  res.sendFile(path.join(__dirname, 'public', 'home.html'))
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.get('/username', function (req, res) {
+  res.json(req.session.passport)
 })
+
 
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
@@ -43,16 +46,16 @@ passport.use(new TwitterStrategy({
     callbackURL: "http://localhost:3000/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, cb) {
-  	console.log("Authenticated Twitter user: ", profile.displayName, profile.id)
+    console.log("Authenticated Twitter user: ", profile.displayName, profile.id)
       return cb(null, profile);
   }
 ));
 
 passport.serializeUser(function(user, done) {
-	console.log("serializeUser from twitter: ", user.displayName, user.id)
+  console.log("serializeUser from twitter: ", user.displayName, user.id)
 
   done(null, {
-     name: user.name,
+     name: user.displayName,
      screenName: user['screen_name'],
      twitterId: user.id
       });
@@ -72,3 +75,8 @@ app.get('/auth/twitter/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
+
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+})
