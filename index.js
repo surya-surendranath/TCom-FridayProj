@@ -10,6 +10,11 @@ var knexOptions 		= require('./knexfile')[process.env.NODE_ENV]
 var knex        		= require('knex')(knexOptions)
 var KnexSessionStore = require('connect-session-knex')(session)
 var store       		= new KnexSessionStore({ knex: knex })
+var browserify 			= require('browserify')
+var literalify 			= require('literalify')
+var React 					= require('react'),
+var ReactDOMServer 	= require('react-dom/server')
+var App = React.createFactory(require('./App'))
 
 app.set('port', (process.env.PORT || 3000));
 
