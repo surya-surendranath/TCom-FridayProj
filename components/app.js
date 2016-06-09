@@ -10,7 +10,9 @@ class App extends Component {
     return (
     	<div>
     		<h1>Welcome to {this.props.name}</h1>
-    		<HomeProductsIndex />
+    		<HomeProductsIndex 
+    		  products={this.props.products}/>
+    		  products={this.props.products}/>
 		</div>
     )	
   }

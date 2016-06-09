@@ -4,6 +4,7 @@ import reactDom from 'react-dom'
 import IndividualProduct from './IndividualProduct.jsx'
 
 class HomeProductsIndex extends Component {
+	
 	constructor (props) {
 		super(props)
 		console.log("Products HomeProductsIndex got from IndividualProduct", this.props.tShirts)
@@ -15,7 +16,6 @@ class HomeProductsIndex extends Component {
 
 		return (
 			<div>
-				<ul>
 					{tShirts.map( (singleItem, i) => {
 						return (
 							<div>
@@ -23,7 +23,6 @@ class HomeProductsIndex extends Component {
 							</div>
 						)
 					})}
-				</ul>
 			</div>
 		)
 	}
