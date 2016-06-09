@@ -1,4 +1,6 @@
 require('dotenv').config()
+var App = require('./source/app.js')
+
 var path 						= require('path')
 var express 				= require('express')
 var session     		= require('express-session')

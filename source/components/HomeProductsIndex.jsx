@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 import IndividualProduct from './IndividualProduct.jsx'
+import products from '../app.js'
 
 class HomeProductsIndex extends Component {
 
 	render () {
 
-		const tShirts = this.props.tShirts
+		const products = this.props.products
 
 		return (
 			<div>
-					{tShirts.map( (singleItem, i) => {
+					{products.map((singleItem, i) => {
 						return (
 							<div>
 								<IndividualProduct />
 							</div>
 						)
-					})
-        }
+					})}
 			</div>
 		)
 	}
