@@ -12,17 +12,13 @@ class App extends Component {
 		$.ajax({
 			url: '/username',
 			type: 'GET',
-			success: this.updateUser
+			success: ()=> {
+				return this.setState({user:data})
+			}
 		})
 	}
 
-	updateUser(data) {
-		console.log("api call", data)
-		this.setState({user: data})
-	}
-
-
-
+	
   render () {
 
     return (

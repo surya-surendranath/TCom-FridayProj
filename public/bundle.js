@@ -19685,9 +19685,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var PRODUCTS = [{ title: 'Griyffindor-1', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png', text: 'Impress your wizard friends' }, { title: 'Griyffindor-2', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png', text: 'Impress your long-sleeved friends' }, { title: 'Griyffindor-3', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png', text: 'Impress your sad friends' }, { title: 'Griyffindor-4', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png', text: 'Impress your absent friends' }, { title: 'Griyffindor-5', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png', text: 'Impress your best friends' }, { title: 'Griyffindor-6', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png', text: 'Impress your muggle friends' }];
 
 var renderStuff = document.getElementById('homebody');
-console.log('welcome to TCom');
 
 _reactDom2.default.render(_react2.default.createElement(_app2.default, { name: 'TCom', products: PRODUCTS }), renderStuff);
+
+console.log('welcome to TCom');
 
 },{"./components/app.jsx":171,"react":167,"react-dom":2}],169:[function(require,module,exports){
 'use strict';
@@ -19862,18 +19863,16 @@ var App = function (_Component) {
 	_createClass(App, [{
 		key: 'componentWillMount',
 		value: function componentWillMount() {
+			var _this2 = this;
+
 			console.log('componentWillMount is running now');
 			$.ajax({
 				url: '/username',
 				type: 'GET',
-				success: this.updateUser
+				success: function success() {
+					return _this2.setState({ user: data });
+				}
 			});
-		}
-	}, {
-		key: 'updateUser',
-		value: function updateUser(data) {
-			console.log("api call", data);
-			this.setState({ user: data });
 		}
 	}, {
 		key: 'render',
