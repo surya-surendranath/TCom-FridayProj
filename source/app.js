@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/app.jsx'
 
-var PRODUCTS = [
+var products = [
 	{title: 'Griyffindor-1', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png',	text: 'Impress your wizard friends'},
  	{title: 'Griyffindor-2', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png',	text: 'Impress your long-sleeved friends'},
  	{title: 'Griyffindor-3', price: '$24.99', image: 'http://www.harrypotterexhibition.com/wp-content/uploads/2014/06/gyriffindor-red-tshirt-new-kids.png',	text: 'Impress your sad friends'},
@@ -13,9 +13,13 @@ var PRODUCTS = [
 
 const renderStuff = document.getElementById('homebody')
 
+console.log(products)
+
 ReactDOM.render(
-	<App name={'TCom'} products={PRODUCTS} />,
+	<App name='TCom' products={products} />,
+
 	renderStuff
 )
 
 console.log('welcome to TCom')
+

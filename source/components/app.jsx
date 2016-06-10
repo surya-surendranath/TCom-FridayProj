@@ -7,12 +7,12 @@ class App extends Component {
 		this.state = {user: 'nobody'}
 	}
 
+
 	componentWillMount() {
 		$.ajax({
 			url: '/username',
 			type: 'GET',
 			success: (data)=> {
-				console.log('user data from server is ', data)
 				return this.setState(data)
 			}
 		})
