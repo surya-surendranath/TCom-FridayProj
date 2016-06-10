@@ -1,4 +1,5 @@
 require('dotenv').config()
+
 var path 						= require('path')
 var express 				= require('express')
 var session     		= require('express-session')
@@ -9,7 +10,7 @@ var knexOptions 		= require('./knexfile')[process.env.NODE_ENV]
 var knex        		= require('knex')(knexOptions)
 var KnexSessionStore = require('connect-session-knex')(session)
 var store       		= new KnexSessionStore({ knex: knex })
-// var home            = require('./public/home.html')
+
 app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -29,7 +30,6 @@ app.use(session({
 
 
 app.get('/', function (req, res) {
-  console.log('Friday', req.session.passport.user)
   res.sendFile(path.join(__dirname, 'public', 'home.html'))
 })
 
@@ -73,6 +73,7 @@ app.get('/auth/twitter/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
+
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
