@@ -30,7 +30,6 @@ app.use(session({
 
 
 app.get('/', function (req, res) {
-  console.log('Friday', req.session.passport.user)
   res.sendFile(path.join(__dirname, 'public', 'home.html'))
 })
 

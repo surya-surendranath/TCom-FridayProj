@@ -8,12 +8,12 @@ class App extends Component {
 	}
 
 	componentWillMount() {
-		console.log('componentWillMount is running now')
 		$.ajax({
 			url: '/username',
 			type: 'GET',
-			success: ()=> {
-				return this.setState({user:data})
+			success: (data)=> {
+				console.log('user data from server is ', data)
+				return this.setState(data)
 			}
 		})
 	}
@@ -24,11 +24,11 @@ class App extends Component {
     return (
     	<div>
     		<h1>Welcome to {this.props.name}</h1>
-    		<p>Your name is {this.state.user} </p>
-        <HomeProductsIndex />
+    		<p>{ this.state.user === 'nobody' ? "" : "Your name is " + this.state.user.name }</p>
 		</div>
     )	
   }
 }
 
 export default App
+        // <HomeProductsIndex />

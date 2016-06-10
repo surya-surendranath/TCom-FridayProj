@@ -19865,12 +19865,12 @@ var App = function (_Component) {
 		value: function componentWillMount() {
 			var _this2 = this;
 
-			console.log('componentWillMount is running now');
 			$.ajax({
 				url: '/username',
 				type: 'GET',
-				success: function success() {
-					return _this2.setState({ user: data });
+				success: function success(data) {
+					console.log('user data from server is ', data);
+					return _this2.setState(data);
 				}
 			});
 		}
@@ -19890,11 +19890,8 @@ var App = function (_Component) {
 				_react2.default.createElement(
 					'p',
 					null,
-					'Your name is ',
-					this.state.user,
-					' '
-				),
-				_react2.default.createElement(_HomeProductsIndex2.default, null)
+					this.state.user === 'nobody' ? "" : "Your name is " + this.state.user.name
+				)
 			);
 		}
 	}]);
@@ -19903,5 +19900,6 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = App;
+// <HomeProductsIndex />
 
 },{"./HomeProductsIndex.jsx":169,"react":167}]},{},[168]);
