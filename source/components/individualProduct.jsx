@@ -8,10 +8,10 @@ class IndividualProduct extends Component {
 
   render () {
     return (
-        <div>
+        <div className="indiv">
             <h1>{this.props.title}</h1>
             <p>{this.props.price}</p>
-            <img src={this.props.image}/>
+            <img className="img" src={this.props.image}/>
             <p>{this.props.text}</p>
               <button>Buy now</button>
         </div>      

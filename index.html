@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <title>TCom</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="
+https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
   <body>
     <main>
       <nav>
-        <a href="/login">Login</a>
-        <a href="/checkout">Checkout</a>
+        <a className="login" href="/login">Login</a>
+        <a className="checkout" href="/checkout">Checkout</a>
         </nav>
-      <div id="homebody"></div>
+      <div id="homebody" className="wave"></div>
     </main>
     <script src="./public/bundle.js"></script>
   </body>

@@ -23,7 +23,6 @@ class App extends Component {
 
     return (
     	<div>
-    		<h1>Welcome to {this.props.name}</h1>
     		<p>{ this.state.user === 'nobody' ? "" : "Your name is " + this.state.user.name }</p>
         <HomeProductsIndex products={this.props.products}/>
 		</div>

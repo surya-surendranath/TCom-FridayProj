@@ -1,8 +1,57 @@
 body {
-	color: red;
+	font-family: 'Open Sans', sans-serif;
 }
 
 main {
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+h1 {
+	color: darkred;
+	font-family: 'Roboto Slab', serif;
+}
+
+.login, .checkout {
+	text-decoration: none;
+	color: white;
+	border: solid darkred 1px;
+	border-radius: 2px;
+	padding: 4px 10px;
+	background-color: darkred;
+}
+
+.buttons {
+	text-align: right;
+	margin-right: 2em;
+}
+
+.indiv {
+	border: solid grey 1px;
+	margin: 2em;
+	padding: 5em;
+	background-color: white;
+	justify-content: center;
+	width: 22%;
+	display: inline-block;
+}
+
+.img {
+	width: 15em;
+}
+
+nav {
+	background-color: rgba(128,0,0,0.7);
+	padding: 1em;
+	position: fixed;
+	width: 100%;
+}
+
+#homebody {
+	padding-top: 5%;
+}
+
+.logo {
+	height: 40px;
+}
