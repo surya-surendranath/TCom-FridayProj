@@ -11,14 +11,12 @@ export default ({cart, products}) => {
 		for ( var ids in cart) {
 			arry.push((<li>{products[ids].title}, qty: {cart[ids]}, total-cost: ${Number(products[ids].price)*cart[ids]}</li>))
 		}
-		console.log(arry)
 		return arry
 	}
 
 	const total = () => {
 		let total = 0
 		for ( var ids in cart) {
-			// console.log(Number(products[ids].price))
 			total+=Number(products[ids].price)*cart[ids]
 		}
 		return total
