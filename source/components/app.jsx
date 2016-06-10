@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import HomeProductsIndex from './HomeProductsIndex.jsx'
+import HomeProductsIndex from './HomeProductsIndex.jsx'
 
 class App extends Component {
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
     	<div>
     		<h1>Welcome to {this.props.name}</h1>
-
+        <HomeProductsIndex products={this.props.products}/>
 		</div>
     )	
   }

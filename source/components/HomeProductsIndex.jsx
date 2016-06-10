@@ -5,7 +5,7 @@ class HomeProductsIndex extends Component {
 
   constructor(props){
     super(props)
-    
+
   }
 
   render () {
@@ -16,7 +16,7 @@ class HomeProductsIndex extends Component {
             this.props.products.map((singleItem, i) => {
 						return (
 							<div>
-								<IndividualProduct />
+								<IndividualProduct title={singleItem.title} price={singleItem.price} image={singleItem.image} text={singleItem.text}/>
 							</div>
 						)
 					 })
