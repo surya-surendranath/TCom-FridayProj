@@ -17,6 +17,7 @@ console.log(products)
 
 ReactDOM.render(
 	<App name='TCom' products={products} />,
+
 	renderStuff
 )
 

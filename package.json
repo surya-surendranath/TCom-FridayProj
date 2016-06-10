@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon index.js",
     "start-dev": "budo ./source/*.* -d --serve ./public/bundle.js --live",
-    "build": "browserify ./source/*.* -o ./public/bundle.js -g uglifyify"
+    "build": "clear & browserify ./source/*.* -o ./public/bundle.js -g uglifyify",
+    "start-dev": "budo ./source/*.* -d --serve bundle.js --live"
   },
   "browserify": {
     "transform": [
